@@ -1,0 +1,158 @@
+[
+    {
+        "name": "armorer house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Armorer_House_1.webp",
+        "beds": 0,
+        "chest": "iron"
+    },
+    {
+        "name": "armorer house 2",
+        "image": "assets/houses/snowy/Snowy_Tundra_Armorer_House_2.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "butcher shop 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Butchers_Shop_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "butcher shop 2",
+        "image": "assets/houses/snowy/Snowy_Tundra_Butchers_Shop_2.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "cartographer 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Cartographer_House_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "fisher cottage 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Fisher_Cottage.webp",
+        "beds": 0,
+        "chest": "bucket"
+    },
+    {
+        "name": "fletcher house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Fletcher_House_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "library 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Library_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "mason house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Masons_House_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "mason house 2",
+        "image": "assets/houses/snowy/Snowy_Tundra_Masons_House_2.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "medium house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Medium_House_1.webp",
+        "beds": 2,
+        "chest": "none"
+    },
+    {
+        "name": "medium house 2",
+        "image": "assets/houses/snowy/Snowy_Tundra_Medium_House_2.webp",
+        "beds": 2,
+        "chest": "none"
+    },
+    {
+        "name": "medium house 3",
+        "image": "assets/houses/snowy/Snowy_Tundra_Medium_House_3.webp",
+        "beds": 2,
+        "chest": "none"
+    },
+    {
+        "name": "shepherd house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Shepherds_House_1.webp",
+        "beds": 0,
+        "chest": "emerald"
+    },
+    {
+        "name": "small house 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_1.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 2",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_2.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 3",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_3.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 4",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_4.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 5",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_5.webp",
+        "beds": 1,
+        "chest": "emerald"
+    },
+    {
+        "name": "small house 6",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_6.webp",
+        "beds": 1,
+        "chest": "emerald"
+    },
+    {
+        "name": "small house 7",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_7.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 8",
+        "image": "assets/houses/snowy/Snowy_Tundra_Small_House_8.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "tannery 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Tannery.webp",
+        "beds": 0,
+        "chest": "emerald"
+    },
+    {
+        "name": "temple 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Temple_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "toolsmith 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Toolsmith_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "blacksmith 1",
+        "image": "assets/houses/snowy/Snowy_Tundra_Blacksmith_1.webp",
+        "beds": 0,
+        "chest": "iron"
+    }
+]

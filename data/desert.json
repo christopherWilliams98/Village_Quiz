@@ -1,0 +1,156 @@
+[
+  {
+    "name": "armorer 1",
+    "image": "assets/houses/desert/Desert_Armorer_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "butcher shop 1",
+    "image": "assets/houses/desert/Desert_Butcher_Shop_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "fisher cottage 1",
+    "image": "assets/houses/desert/Desert_Fisher_1.webp",
+    "beds": 0,
+    "chest": "bucket",
+    "craft": false
+  },
+  {
+    "name": "fletcher house 1",
+    "image": "assets/houses/desert/Desert_Fletcher_House_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "library 1",
+    "image": "assets/houses/desert/Desert_Library_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "mason house 1",
+    "image": "assets/houses/desert/Desert_Mason_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "medium house 1",
+    "image": "assets/houses/desert/Desert_Medium_House_1.webp",
+    "beds": 2,
+    "chest": "emeralds",
+    "craft": false
+  },
+  {
+    "name": "medium house 2",
+    "image": "assets/houses/desert/Desert_Medium_House_2.webp",
+    "beds": 2,
+    "chest": "emeralds",
+    "craft": false
+  },
+  {
+    "name": "shepherd house 1",
+    "image": "assets/houses/desert/Desert_Shepherd_House_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "small house 1",
+    "image": "assets/houses/desert/Desert_Small_House_1.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "small house 2",
+    "image": "assets/houses/desert/Desert_Small_House_2.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "small house 3",
+    "image": "assets/houses/desert/Desert_Small_House_3.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": false
+  },
+  {
+    "name": "small house 4",
+    "image": "assets/houses/desert/Desert_Small_House_4.webp",
+    "beds": 1,
+    "chest": "emeralds",
+    "craft": false
+  },
+  {
+    "name": "small house 5",
+    "image": "assets/houses/desert/Desert_Small_House_5.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": true
+  },
+  {
+    "name": "small house 6",
+    "image": "assets/houses/desert/Desert_Small_House_6.webp",
+    "beds": 1,
+    "chest": "emeralds",
+    "craft": false
+  },
+  {
+    "name": "small house 7",
+    "image": "assets/houses/desert/Desert_Small_House_7.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": false
+  },
+    {
+    "name": "small house 8",
+    "image": "assets/houses/desert/Desert_Small_House_8.webp",
+    "beds": 1,
+    "chest": "none",
+    "craft": true
+  },
+    {
+    "name": "tannery 1",
+    "image": "assets/houses/desert/Desert_Tannery_1.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+    {
+    "name": "temple 1",
+    "image": "assets/houses/desert/Desert_Temple_1.webp",
+    "beds": 0,
+    "chest": "emeralds",
+    "craft": false
+  },
+    {
+    "name": "temple 2",
+    "image": "assets/houses/desert/Desert_Temple_2.webp",
+    "beds": 0,
+    "chest": "none",
+    "craft": false
+  },
+    {
+    "name": "toolsmith 1",
+    "image": "assets/houses/desert/Desert_Toolsmith_1.webp",
+    "beds": 0,
+    "chest": "iron",
+    "craft": false
+  },
+    {
+    "name": "blacksmith 1",
+    "image": "assets/houses/desert/Desert_Blacksmith_1.webp",
+    "beds": 0,
+    "chest": "iron",
+    "craft": false
+  }
+]

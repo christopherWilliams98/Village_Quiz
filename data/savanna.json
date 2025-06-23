@@ -1,0 +1,152 @@
+[
+    {
+        "name": "armorer house 1",
+        "image": "assets/houses/savanna/Savanna_Armorer_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "butcher shop 1",
+        "image": "assets/houses/savanna/Savanna_Butchers_Shop_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "butcher shop 2",
+        "image": "assets/houses/savanna/Savanna_Butchers_Shop_2.webp",
+        "beds": 0,
+        "chest": "emeralds"
+    },
+    {
+        "name": "cartographer 1",
+        "image": "assets/houses/savanna/Savanna_Cartographer_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "fisher cottage 1",
+        "image": "assets/houses/savanna/Savanna_Fisher_Cottage_1.webp",
+        "beds": 0,
+        "chest": "bucket"
+    },
+    {
+        "name": "fletcher house 1",
+        "image": "assets/houses/savanna/Savanna_Fletcher_House_1.webpp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "library 1",
+        "image": "assets/houses/savanna/Savanna_Library_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "mason house 1",
+        "image": "assets/houses/savanna/Savanna_Mason_1.webp",
+        "beds": 0,
+        "chest": "emeralds"
+    },
+    {
+        "name": "medium house 1",
+        "image": "assets/houses/savanna/Savanna_Medium_House_1.webp",
+        "beds": 2,
+        "chest": "bucket"
+    },
+    {
+        "name": "medium house 2",
+        "image": "assets/houses/savanna/Savanna_Medium_House_2.webp",
+        "beds": 2,
+        "chest": "bucket"
+    },
+    {
+        "name": "shepherd house 1",
+        "image": "assets/houses/savanna/Savanna_Shepherd_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "small house 1",
+        "image": "assets/houses/savanna/Savanna_Small_House_1.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 2",
+        "image": "assets/houses/savanna/Savanna_Small_House_2.webp",
+        "beds": 1,
+        "chest": "bucket"
+    },
+    {
+        "name": "small house 3",
+        "image": "assets/houses/savanna/Savanna_Small_House_3.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 4",
+        "image": "assets/houses/savanna/Savanna_Small_House_4.webp",
+        "beds": 1,
+        "chest": "bucket"
+    },
+    {
+        "name": "small house 5",
+        "image": "assets/houses/savanna/Savanna_Small_House_5.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 6",
+        "image": "assets/houses/savanna/Savanna_Small_House_6.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "small house 7",
+        "image": "assets/houses/savanna/Savanna_Small_House_7.webp",
+        "beds": 1,
+        "chest": "bucket"
+    },
+    {
+        "name": "small house 8",
+        "image": "assets/houses/savanna/Savanna_Small_House_8.webp",
+        "beds": 1,
+        "chest": "none"
+    },
+    {
+        "name": "tannery 1",
+        "image": "assets/houses/savanna/Savanna_Tannery_1.webp",
+        "beds": 0,
+        "chest": "emeralds"
+    },
+    {
+        "name": "temple 1",
+        "image": "assets/houses/savanna/Savanna_Temple_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "temple 2",
+        "image": "assets/houses/savanna/Savanna_Temple_2.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "toolsmith 1",
+        "image": "assets/houses/savanna/Savanna_Toolsmith_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+    {
+        "name": "blacksmith 1",
+        "image": "assets/houses/savanna/Savanna_Blacksmith_1.webp",
+        "beds": 0,
+        "chest": "none"
+    },
+        {
+        "name": "blacksmith 2",
+        "image": "assets/houses/savanna/Savanna_Blacksmith_2.webp",
+        "beds": 0,
+        "chest": "iron"
+    }
+]
