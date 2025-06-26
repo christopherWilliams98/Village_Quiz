@@ -1,169 +1,132 @@
 [
     {
         "name": "armorer house 1",
-        "image": "assets/houses/plains/Plains_Armorer_House_1.webp",
+        "image": "assets/houses/taiga/Taiga_Armorer_House_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
-        "name": "big house 1",
-        "image": "assets/houses/plains/Plains_big_house_1.webp",
-        "beds": 4,
-        "chest": "emerald"
+        "name": "armorer house 2",
+        "image": "assets/houses/taiga/Taiga_Armorer_House_2.webp",
+        "beds": 0,
+        "chest": "none"
     },
     {
         "name": "butcher shop 1",
-        "image": "assets/houses/plains/Plains_Butcher_Shop_1.webp",
-        "beds": 0,
-        "chest": "none"
-    },
-    {
-        "name": "butcher shop 2",
-        "image": "assets/houses/plains/Plains_butcher_shop_2.webp",
+        "image": "assets/houses/taiga/Taiga_Butcher_Shop_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "cartographer 1",
-        "image": "assets/houses/plains/Plains_Cartographer_1.webp",
+        "image": "assets/houses/taiga/Taiga_Cartographer_House_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "fisher cottage 1",
-        "image": "assets/houses/plains/Plains_fisher_cottage_1.webp",
+        "image": "assets/houses/taiga/Taiga_Fisher_Cottage_1.webp",
         "beds": 0,
         "chest": "bucket"
     },
     {
         "name": "fletcher house 1",
-        "image": "assets/houses/plains/Plains_Fletcher_House_1.webp",
+        "image": "assets/houses/taiga/Taiga_Fletcher_House_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "emerald"
     },
     {
         "name": "library 1",
-        "image": "assets/houses/plains/Plains_library_1.webp",
-        "beds": 0,
-        "chest": "none"
-    },
-    {
-        "name": "library 2",
-        "image": "assets/houses/plains/Plains_library_2.webp",
+        "image": "assets/houses/taiga/Taiga_Library_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "mason house 1",
-        "image": "assets/houses/plains/Plains_masons_house_1.webp",
+        "image": "assets/houses/taiga/Taiga_Masons_House_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "medium house 1",
-        "image": "assets/houses/plains/Plains_Medium_House_1.webp",
-        "beds": 2,
-        "chest": "none"
-    },
-    {
-        "name": "medium house 2",
-        "image": "assets/houses/plains/Plains_Medium_House_2.webp",
+        "image": "assets/houses/taiga/Taiga_Medium_House_1.webp",
         "beds": 2,
         "chest": "emerald"
     },
     {
+        "name": "medium house 2",
+        "image": "assets/houses/taiga/Taiga_Medium_House_2.webp",
+        "beds": 2,
+        "chest": "emerald"
+    },
+    {
+        "name": "medium house 3",
+        "image": "assets/houses/taiga/Taiga_Medium_House_3.webp",
+        "beds": 2,
+        "chest": "emerald"
+    },
+    {
+        "name": "medium house 4",
+        "image": "assets/houses/taiga/Taiga_Medium_House_4.webp",
+        "beds": 2,
+        "chest": "none"
+    },
+    {
         "name": "shepherd house 1",
-        "image": "assets/houses/plains/Plains_shepherd_house.webp",
+        "image": "assets/houses/taiga/Taiga_Shepherds_House_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "small house 1",
-        "image": "assets/houses/plains/Plains_Small_House_1.webp",
+        "image": "assets/houses/taiga/Taiga_Small_House_1.webp",
         "beds": 1,
         "chest": "none"
     },
     {
         "name": "small house 2",
-        "image": "assets/houses/plains/Plains_Small_House_2.webp",
+        "image": "assets/houses/taiga/Taiga_Small_House_2.webp",
         "beds": 1,
         "chest": "none"
     },
     {
         "name": "small house 3",
-        "image": "assets/houses/plains/Plains_Small_House_3.webp",
+        "image": "assets/houses/taiga/Taiga_Small_House_3.webp",
         "beds": 1,
-        "chest": "none"
+        "chest": "emerald"
     },
     {
         "name": "small house 4",
-        "image": "assets/houses/plains/Plains_Small_House_4.webp",
+        "image": "assets/houses/taiga/Taiga_Small_House_4.webp",
         "beds": 1,
         "chest": "none"
     },
     {
         "name": "small house 5",
-        "image": "assets/houses/plains/Plains_Small_House_5.webp",
-        "beds": 1,
-        "chest": "none"
-    },
-    {
-        "name": "small house 6",
-        "image": "assets/houses/plains/Plains_Small_House_6.webp",
-        "beds": 1,
-        "chest": "none"
-    },
-    {
-        "name": "small house 7",
-        "image": "assets/houses/plains/Plains_Small_House_7.webp",
+        "image": "assets/houses/taiga/Taiga_Small_House_5.webp",
         "beds": 1,
         "chest": "emerald"
     },
     {
-        "name": "small house 8",
-        "image": "assets/houses/plains/Plains_Small_House_8.webp",
-        "beds": 1,
-        "chest": "none"
-    },
-    {
-        "name": "stable 1",
-        "image": "assets/houses/plains/Plains_Stable_1.webp",
+        "image": "assets/houses/taiga/Taiga_Tannery_1.webp",
         "beds": 0,
-        "chest": "none"
-    },
-    {
-        "name": "stable 2",
-        "image": "assets/houses/plains/Plains_Stable_2.webp",
-        "beds": 0,
-        "chest": "none"
-    },
-    {
-        "name": "tannery 1",
-        "image": "assets/houses/plains/Plains_Tannery_1.webp",
-        "beds": 0,
-        "chest": "emeralds"
+        "chest": "emerald"
     },
     {
         "name": "temple 1",
-        "image": "assets/houses/plains/Plains_temple_1.webp",
-        "beds": 0,
-        "chest": "none"
-    },
-    {
-        "name": "temple 2",
-        "image": "assets/houses/plains/Plains_temple_2.webp",
+        "image": "assets/houses/taiga/Taiga_Temple_1.webp",
         "beds": 0,
         "chest": "none"
     },
     {
         "name": "toolsmith 1",
-        "image": "assets/houses/plains/Plains_toolsmith_house_1.webp",
+        "image": "assets/houses/taiga/Taiga_Toolsmith_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "iron"
     },
     {
         "name": "blacksmith 1",
-        "image": "assets/houses/plains/Plains_blacksmith.webp",
+        "image": "assets/houses/taiga/Taiga_Blacksmith_1.webp",
         "beds": 0,
         "chest": "iron"
     }

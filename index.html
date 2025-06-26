@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Minecraft Village Quiz</title>
+    <title>Learn your houses you fucking idiot</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine JS 3 (deferred) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
   </head>
   <body class="bg-gray-900 text-gray-100 flex flex-col items-center min-h-screen p-6">
+
+    <!-- biome-specific background -->
+    <div
+      x-data
+      :style="`background-image:url(assets/backgrounds/${$store.quiz.biomeName}.webp)`"
+      class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-10 -z-10 pointer-events-none">
+    </div>
+
     <h1 class="text-3xl font-bold mb-6 text-center">
-      Minecraft Village Quiz –
+      Learn your fucking houses –
       <span x-data x-text="$store.quiz.biomeName"></span>
     </h1>
 

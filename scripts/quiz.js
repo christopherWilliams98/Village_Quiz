@@ -1,116 +1,134 @@
 // scripts/quiz.js
-// Vanilla JS with a pinch of Alpine for the reactive bits
+// Vanilla JS + Alpine.js 3  (single Alpine instance)
 
-// ----  global constants  ----------------------------------
+// ------------ constants ------------
 const BIOMES = ["plains", "desert", "savanna", "taiga", "snowy"];
 const ICONS = {
-  beds: n => `assets/icons/beds_${n}.png`,          // 0 1 2 4
-  chest: type => `assets/icons/chest_${type}.png`, // none | emerald | bucket | iron
+  beds:  n    => `assets/icons/beds_${n}.png`,
+  chest: type => `assets/icons/chest_${type}.png`,
   craft: flag => `assets/icons/craft_${flag ? "yes" : "no"}.png`,
 };
 
-// selectable answers to render (order == visual order)
 const BED_OPTS   = [0, 1, 2, 4];
 const CHEST_OPTS = ["none", "emerald", "bucket", "iron"];
-const CRAFT_OPTS = [true, false];
+const CRAFT_OPTS = [false, true];          // “No” first, “Yes” second
+const DELAY_CORRECT = 600;
+const DELAY_WRONG   = 1500;
 
-// simple utility — Fisher–Yates shuffle, in‑place
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
+// Fisher–Yates shuffle
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return arr;
+  return a;
 }
 
-// ----  Alpine global store  ----------------------------------
-
+// ------------- Alpine store -------------
 import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/module.esm.js";
 
 Alpine.store("quiz", {
-  /* reactive state */
+  // core state
   biome: "plains",
+  get biomeName() { return this.biome[0].toUpperCase() + this.biome.slice(1); },
+
   houses: [],
   idx: 0,
-  // per‑question user picks
   picks: { beds: null, chest: null, craft: null },
-  // cumulative score
-  correctBeds: 0,
-  correctChest: 0,
 
-  get biomeName() {
-    return this.biome.charAt(0).toUpperCase() + this.biome.slice(1);
+  // tracking & results
+  attempts: 0,
+  correct: 0,
+  finished: false,          // = true when last house answered
+  get percent() { return this.attempts ? Math.round((this.correct / this.attempts) * 100) : 0; },
+  get grade() {
+    const p = this.percent;
+    if (p >= 90) return "Spoingus pace";
+    return "???";
   },
-  get house() {
-    return this.houses[this.idx] || {};
-  },
+
+  get house()     { return this.houses[this.idx] || {}; },
+  get needCraft() { return this.biome === "desert"; },
   get ready() {
-    const needCraft = this.biome === "desert";
-    return (
-      this.picks.beds !== null &&
-      this.picks.chest !== null &&
-      (!needCraft || this.picks.craft !== null)
-    );
-  },
-  get showCraft() {
-    return this.biome === "desert";
+    return this.picks.beds  !== null &&
+           this.picks.chest !== null &&
+           (!this.needCraft || this.picks.craft !== null);
   },
 
-  /* public methods */
+  // ----------- methods -----------
   async loadBiome(b) {
     if (!BIOMES.includes(b)) return;
-    this.biome = b;
-    // fetch JSON — e.g. data/plains.json
-    const res = await fetch(`data/${b}.json`);
-    this.houses = shuffle(await res.json());
-    this.idx = 0;
+    this.biome    = b;
+    this.houses   = shuffle(await (await fetch(`data/${b}.json`)).json());
+    this.idx      = 0;
+    this.correct  = 0;
+    this.attempts = 0;
+    this.finished = false;
     this.resetPicks();
   },
-  select(kind, value) {
-    this.picks[kind] = value;
-  },
-  submit() {
-    const h = this.house;
-    if (!h) return;
-    // grading
-    if (this.picks.beds === h.beds) this.correctBeds++;
-    if (this.picks.chest === h.chest) this.correctChest++;
-    // simple flash effect via CSS class toggle (handled in template)
-    h._showAnswer = true;
-    // wait ½ sec → next question
-    setTimeout(() => {
-      this.idx++;
-      if (this.idx >= this.houses.length) {
-        alert(`Done! Bed points: ${this.correctBeds}/${this.houses.length}\nChest points: ${this.correctChest}/${this.houses.length}`);
-        this.idx = 0;
-        this.correctBeds = this.correctChest = 0;
-      }
-      this.resetPicks();
-    }, 500);
-  },
-  optionClass(kind, value) {
-    const h = this.house;
-    if (!h._showAnswer) return this.picks[kind] === value ? "ring-2 ring-yellow-400" : "";
-    const isCorrect = h[kind] === value;
-    const picked = this.picks[kind] === value;
-    if (isCorrect) return "ring-2 ring-green-500";
-    if (picked && !isCorrect) return "ring-2 ring-red-500 opacity-50";
-    return "opacity-50";
-  },
-  resetPicks() {
-    this.picks = { beds: null, chest: null, craft: null };
-    const h = this.house;
-    if (h) delete h._showAnswer;
+
+  playAgain() {               // reshuffle same biome
+    this.loadBiome(this.biome);
   },
 
-  /* DOM mount helpers (called from index.html) */
+  select(kind, value) { this.picks[kind] = value; },
+
+  submit() {
+    if (this.finished || !this.house) return;
+
+    const { beds, chest, craft = null } = this.house;
+    const allCorrect =
+      this.picks.beds  === beds  &&
+      this.picks.chest === chest &&
+      (!this.needCraft || this.picks.craft === craft);
+
+    this.attempts++;
+    if (allCorrect) this.correct++;
+
+    // reveal colours
+    this.house._showAnswer = true;
+
+    const delay = allCorrect ? DELAY_CORRECT : DELAY_WRONG;
+
+    setTimeout(() => {
+      this.idx++;
+
+      if (this.idx >= this.houses.length) {
+        this.finished = true;           // show results card
+        return;
+      }
+      this.resetPicks();
+    }, delay);
+  },
+
+  optionClass(kind, value) {
+    if (!this.house._showAnswer)
+      return this.picks[kind] === value ? "ring-2 ring-yellow-400" : "";
+
+    const correct   = this.house[kind] === value;
+    const wasPicked = this.picks[kind] === value;
+
+    if (correct)   return "ring-2 ring-green-500 animate-pulse";
+    if (wasPicked) return "ring-2 ring-red-500 opacity-50 animate-pulse";
+    return "opacity-40";
+  },
+
+  resetPicks() {
+    this.picks = { beds: null, chest: null, craft: null };
+    if (this.house) delete this.house._showAnswer;
+  },
+
+  // ----------- mount helpers -----------
   async mount(cardEl) {
     await this.loadBiome(this.biome);
 
-    // Build the card’s inner HTML once (less Alpine template noise)
     cardEl.innerHTML = `
-      <div class="p-5 border border-gray-700 rounded-2xl bg-gray-800" x-show="$store.quiz.house">
-        <img :src="$store.quiz.house.image" :alt="$store.quiz.house.name" class="w-full mb-4 rounded" />
+      <!-- Quiz card (question mode) -->
+      <div x-show="!$store.quiz.finished"
+           class="p-5 border border-gray-700 rounded-2xl bg-gray-800"
+           x-transition>
+        <img :src="$store.quiz.house.image" :alt="$store.quiz.house.name"
+             class="w-full max-h-56 object-contain mb-4 rounded" />
 
         <!-- Beds row -->
         <div class="mb-3">
@@ -119,10 +137,10 @@ Alpine.store("quiz", {
             ${BED_OPTS.map(v => `
               <button @click="$store.quiz.select('beds', ${v})"
                       :class="$store.quiz.optionClass('beds', ${v})"
-                      class="rounded p-1 border border-gray-600">
-                <img src="${ICONS.beds(v)}" alt="${v} beds" class="w-12 h-12" />
-              </button>
-            `).join("")}
+                      class="rounded border border-gray-600 p-1">
+                <img src="${ICONS.beds(v)}" alt="${v} beds"
+                     class="w-20 h-20 object-contain" />
+              </button>`).join("")}
           </div>
         </div>
 
@@ -133,45 +151,84 @@ Alpine.store("quiz", {
             ${CHEST_OPTS.map(t => `
               <button @click="$store.quiz.select('chest', '${t}')"
                       :class="$store.quiz.optionClass('chest', '${t}')"
-                      class="rounded p-1 border border-gray-600">
-                <img src="${ICONS.chest(t)}" alt="${t} chest" class="w-12 h-12" />
-              </button>
-            `).join("")}
+                      class="rounded border border-gray-600 p-1">
+                <img src="${ICONS.chest(t)}" alt="${t} chest"
+                     class="w-20 h-20 object-contain" />
+              </button>`).join("")}
           </div>
         </div>
 
-        <!-- Craft row (only desert) -->
-        <template x-if="$store.quiz.showCraft">
+        <!-- Craft row (desert only) -->
+        <template x-if="$store.quiz.needCraft">
           <div class="mb-3">
             <p class="mb-1 font-semibold">Crafting Table</p>
             <div class="grid grid-cols-2 gap-2">
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
                         :class="$store.quiz.optionClass('craft', ${flag})"
-                        class="rounded p-1 border border-gray-600">
-                  <img src="${ICONS.craft(flag)}" alt="${flag ? 'Yes' : 'No'}" class="w-12 h-12" />
-                </button>
-              `).join("")}
+                        class="rounded border border-gray-600 p-1">
+                  <img src="${ICONS.craft(flag)}"
+                       alt="${flag ? 'No' : 'Yes'}"
+                       class="w-20 h-20 object-contain" />
+                </button>`).join("")}
             </div>
           </div>
         </template>
 
         <button @click="$store.quiz.submit()"
                 :disabled="!$store.quiz.ready"
-                class="mt-2 w-full py-2 rounded bg-emerald-600 disabled:bg-gray-700 font-semibold">
+                class="mt-2 w-full py-2 rounded font-semibold
+                       bg-emerald-600 disabled:bg-gray-700">
           Submit
+        </button>
+
+        <p class="mt-2 text-sm text-center">
+          Score:
+          <span x-text="$store.quiz.correct"></span> /
+          <span x-text="$store.quiz.attempts"></span>
+        </p>
+      </div>
+
+      <!-- Results card -->
+      <div x-show="$store.quiz.finished"
+          class="p-6 border border-gray-700 rounded-2xl bg-gray-800 text-center"
+          x-transition>
+        <h2 class="text-2xl font-bold mb-4">Results</h2>
+
+        <p class="mb-2">You scored
+          <span class="font-semibold" x-text="$store.quiz.percent"></span>%  
+          (<span x-text="$store.quiz.correct"></span> /
+          <span x-text="$store.quiz.attempts"></span>)
+        </p>
+
+        <p class="text-xl font-bold mb-6" x-text="$store.quiz.grade"></p>
+
+        <!-- ▼ ADD THESE TWO LINES ▼ -->
+        <p class="text-2xl font-bold mb-2">YOU:</p>
+        <img :src="$store.quiz.percent >= 90
+                    ? 'assets/grade/pace.png'
+                    : 'assets/grade/huh.png'"
+            alt="result image"
+            class="mx-auto w-36 h-36 object-contain mb-6" />
+        <!-- ▲ ADD THESE TWO LINES ▲ -->
+
+        <button @click="$store.quiz.playAgain()"
+                class="w-full py-2 rounded bg-emerald-600 font-semibold">
+          Play again
         </button>
       </div>
     `;
     Alpine.initTree(cardEl);
   },
-  initBiomeSwitcher(containerEl) {
-    containerEl.innerHTML = BIOMES.map(b => `
+
+  initBiomeSwitcher(el) {
+    el.innerHTML = BIOMES.map(b => `
       <button @click="$store.quiz.loadBiome('${b}')"
-              :class="{'bg-emerald-600': $store.quiz.biome==='${b}'}"
-              class="px-3 py-1 mx-1 rounded bg-gray-700 hover:bg-gray-600 capitalize">${b}</button>
-    `).join("");
-    Alpine.initTree(containerEl);
+              :class="{'bg-emerald-600': $store.quiz.biome === '${b}'}"
+              class="px-3 py-1 mx-1 rounded bg-gray-700 hover:bg-gray-600 capitalize">
+        ${b}
+      </button>`).join("");
+    Alpine.initTree(el);
   },
 });
 

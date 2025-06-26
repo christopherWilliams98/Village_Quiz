@@ -15,7 +15,7 @@
         "name": "butcher shop 2",
         "image": "assets/houses/savanna/Savanna_Butchers_Shop_2.webp",
         "beds": 0,
-        "chest": "emeralds"
+        "chest": "emerald"
     },
     {
         "name": "cartographer 1",
@@ -31,7 +31,7 @@
     },
     {
         "name": "fletcher house 1",
-        "image": "assets/houses/savanna/Savanna_Fletcher_House_1.webpp",
+        "image": "assets/houses/savanna/Savanna_Fletcher_House_1.webp",
         "beds": 0,
         "chest": "none"
     },
@@ -45,7 +45,7 @@
         "name": "mason house 1",
         "image": "assets/houses/savanna/Savanna_Mason_1.webp",
         "beds": 0,
-        "chest": "emeralds"
+        "chest": "emerald"
     },
     {
         "name": "medium house 1",
@@ -117,7 +117,7 @@
         "name": "tannery 1",
         "image": "assets/houses/savanna/Savanna_Tannery_1.webp",
         "beds": 0,
-        "chest": "emeralds"
+        "chest": "emerald"
     },
     {
         "name": "temple 1",

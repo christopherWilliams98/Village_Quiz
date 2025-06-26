@@ -45,14 +45,14 @@
     "name": "medium house 1",
     "image": "assets/houses/desert/Desert_Medium_House_1.webp",
     "beds": 2,
-    "chest": "emeralds",
+    "chest": "emerald",
     "craft": false
   },
   {
     "name": "medium house 2",
     "image": "assets/houses/desert/Desert_Medium_House_2.webp",
     "beds": 2,
-    "chest": "emeralds",
+    "chest": "emerald",
     "craft": false
   },
   {
@@ -87,7 +87,7 @@
     "name": "small house 4",
     "image": "assets/houses/desert/Desert_Small_House_4.webp",
     "beds": 1,
-    "chest": "emeralds",
+    "chest": "emerald",
     "craft": false
   },
   {
@@ -101,7 +101,7 @@
     "name": "small house 6",
     "image": "assets/houses/desert/Desert_Small_House_6.webp",
     "beds": 1,
-    "chest": "emeralds",
+    "chest": "emerald",
     "craft": false
   },
   {
@@ -129,7 +129,7 @@
     "name": "temple 1",
     "image": "assets/houses/desert/Desert_Temple_1.webp",
     "beds": 0,
-    "chest": "emeralds",
+    "chest": "emerald",
     "craft": false
   },
     {
