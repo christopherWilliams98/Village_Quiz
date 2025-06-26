@@ -139,7 +139,7 @@ Alpine.store("quiz", {
                       :class="$store.quiz.optionClass('beds', ${v})"
                       class="rounded border border-gray-600 p-1">
                 <img src="${ICONS.beds(v)}" alt="${v} beds"
-                     class="w-20 h-20 object-contain" />
+                     class="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
               </button>`).join("")}
           </div>
         </div>
@@ -153,7 +153,7 @@ Alpine.store("quiz", {
                       :class="$store.quiz.optionClass('chest', '${t}')"
                       class="rounded border border-gray-600 p-1">
                 <img src="${ICONS.chest(t)}" alt="${t} chest"
-                     class="w-20 h-20 object-contain" />
+                     class="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
               </button>`).join("")}
           </div>
         </div>
@@ -169,7 +169,7 @@ Alpine.store("quiz", {
                         class="rounded border border-gray-600 p-1">
                   <img src="${ICONS.craft(flag)}"
                        alt="${flag ? 'No' : 'Yes'}"
-                       class="w-20 h-20 object-contain" />
+                       class="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
                 </button>`).join("")}
             </div>
           </div>

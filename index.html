@@ -20,16 +20,28 @@
       Learn your fucking houses –
       <span x-data x-text="$store.quiz.biomeName"></span>
     </h1>
-
+      <p class="mb-4 text-center">
+        Study houses here:
+        <a href="https://minecraftvillages.casa/"
+          target="_blank" rel="noopener"
+          class="text-emerald-400 underline hover:text-emerald-300">
+          minecraftvillages.casa
+        </a>
+      </p>
     <!-- biome switcher buttons -->
-    <div x-data x-init="$store.quiz.initBiomeSwitcher($el)" class="mb-4"></div>
+    <div
+      x-data
+      x-init="$store.quiz.initBiomeSwitcher($el)"
+      class="mb-4 w-full flex overflow-x-auto sm:overflow-visible whitespace-nowrap
+            justify-start sm:justify-center">
+    </div>
 
     <!-- quiz card -->
     <div
       x-data
       x-init="$store.quiz.mount($el)"
-      class="w-full max-w-sm sm:max-w-md"
-    ></div>
+      class="w-full max-w-xs sm:max-w-md">
+    </div>
 
     <script type="module" src="scripts/quiz.js"></script>
   </body>
