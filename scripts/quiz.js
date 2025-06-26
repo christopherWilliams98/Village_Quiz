@@ -75,6 +75,8 @@ Alpine.store("quiz", {
 
   submit() {
     if (this.finished || !this.house) return;
+    if (this.house._showAnswer) return;   // ← already graded, ignore extra clicks
+
 
     const { beds, chest, craft = null } = this.house;
     const allCorrect =
