@@ -151,7 +151,7 @@
     },
     {
         "name": "temple 2",
-        "image": "assets/houses/plains/Plains_temple_2.webp",
+        "image": "assets/houses/plains/Plains_Temple_2.webp",
         "beds": 0,
         "chest": "none"
     },
