@@ -78,12 +78,6 @@
         "chest": "none"
     },
     {
-        "name": "shepherd house 1",
-        "image": "assets/houses/snowy/Snowy_Tundra_Shepherds_House_1.webp",
-        "beds": 0,
-        "chest": "emerald"
-    },
-    {
         "name": "small house 1",
         "image": "assets/houses/snowy/Snowy_Tundra_Small_House_1.webp",
         "beds": 1,
