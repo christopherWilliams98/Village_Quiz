@@ -17,7 +17,7 @@
     "name": "fisher cottage 1",
     "image": "assets/houses/desert/Desert_Fisher_1.webp",
     "beds": 0,
-    "chest": "bucket",
+    "chest": "none",
     "craft": false
   },
   {
