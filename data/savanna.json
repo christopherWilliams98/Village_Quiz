@@ -27,7 +27,7 @@
         "name": "fisher cottage 1",
         "image": "assets/houses/savanna/Savanna_Fisher_Cottage_1.webp",
         "beds": 0,
-        "chest": "bucket"
+        "chest": "none"
     },
     {
         "name": "fletcher house 1",
