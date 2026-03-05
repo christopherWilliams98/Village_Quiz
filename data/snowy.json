@@ -33,7 +33,7 @@
         "name": "fisher cottage 1",
         "image": "assets/houses/snowy/Snowy_Tundra_Fisher_Cottage.webp",
         "beds": 0,
-        "chest": "bucket"
+        "chest": "none"
     },
     {
         "name": "fletcher house 1",
