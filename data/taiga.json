@@ -6,12 +6,6 @@
         "chest": "none"
     },
     {
-        "name": "armorer house 2",
-        "image": "assets/houses/taiga/Taiga_Armorer_House_2.webp",
-        "beds": 0,
-        "chest": "none"
-    },
-    {
         "name": "butcher shop 1",
         "image": "assets/houses/taiga/Taiga_Butcher_Shop_1.webp",
         "beds": 0,
