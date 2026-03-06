@@ -3,125 +3,146 @@
         "name": "armorer house 1",
         "image": "assets/houses/taiga/Taiga_Armorer_House_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "butcher shop 1",
         "image": "assets/houses/taiga/Taiga_Butcher_Shop_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "cartographer 1",
         "image": "assets/houses/taiga/Taiga_Cartographer_House_1.webp",
         "beds": 0,
-        "chest": "cartographer"
+        "chest": "cartographer",
+        "craft": false
     },
     {
         "name": "fisher cottage 1",
         "image": "assets/houses/taiga/Taiga_Fisher_Cottage_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "fletcher house 1",
         "image": "assets/houses/taiga/Taiga_Fletcher_House_1.webp",
         "beds": 0,
-        "chest": "flint"
+        "chest": "flint",
+        "craft": false
     },
     {
         "name": "library 1",
         "image": "assets/houses/taiga/Taiga_Library_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "mason house 1",
         "image": "assets/houses/taiga/Taiga_Masons_House_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "medium house 1",
         "image": "assets/houses/taiga/Taiga_Medium_House_1.webp",
         "beds": 2,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": false
     },
     {
         "name": "medium house 2",
         "image": "assets/houses/taiga/Taiga_Medium_House_2.webp",
         "beds": 2,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": true
     },
     {
         "name": "medium house 3",
         "image": "assets/houses/taiga/Taiga_Medium_House_3.webp",
         "beds": 2,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": true
     },
     {
         "name": "medium house 4",
         "image": "assets/houses/taiga/Taiga_Medium_House_4.webp",
         "beds": 2,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "shepherd house 1",
         "image": "assets/houses/taiga/Taiga_Shepherds_House_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "small house 1",
         "image": "assets/houses/taiga/Taiga_Small_House_1.webp",
         "beds": 1,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "small house 2",
         "image": "assets/houses/taiga/Taiga_Small_House_2.webp",
         "beds": 1,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "small house 3",
         "image": "assets/houses/taiga/Taiga_Small_House_3.webp",
         "beds": 1,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": true
     },
     {
         "name": "small house 4",
         "image": "assets/houses/taiga/Taiga_Small_House_4.webp",
         "beds": 1,
-        "chest": "none"
+        "chest": "none",
+        "craft": true
     },
     {
         "name": "small house 5",
         "image": "assets/houses/taiga/Taiga_Small_House_5.webp",
         "beds": 1,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": false
     },
     {
         "image": "assets/houses/taiga/Taiga_Tannery_1.webp",
         "beds": 0,
-        "chest": "emerald"
+        "chest": "emerald",
+        "craft": false
     },
     {
         "name": "temple 1",
         "image": "assets/houses/taiga/Taiga_Temple_1.webp",
         "beds": 0,
-        "chest": "none"
+        "chest": "none",
+        "craft": false
     },
     {
         "name": "toolsmith 1",
         "image": "assets/houses/taiga/Taiga_Toolsmith_1.webp",
         "beds": 0,
-        "chest": "iron"
+        "chest": "iron",
+        "craft": false
     },
     {
         "name": "blacksmith 1",
         "image": "assets/houses/taiga/Taiga_Blacksmith_1.webp",
         "beds": 0,
-        "chest": "iron"
+        "chest": "iron",
+        "craft": false
     }
 ]
