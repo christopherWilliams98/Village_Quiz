@@ -56,7 +56,7 @@ Alpine.store("quiz", {
   },
 
   get needCraft() {
-    return this.biome === "desert";
+    return ["desert", "savanna", "taiga"].includes(this.biome);
   },
 
   get chestOptions() {
