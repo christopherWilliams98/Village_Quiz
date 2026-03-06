@@ -49,6 +49,10 @@ Alpine.store("quiz", {
   correct: 0,
   finished: false,
 
+  optionRowStyle(count) {
+  return `grid-template-columns: repeat(${count}, minmax(0, 1fr)); width: fit-content;`;
+},
+
   // computed
   get biomeName() {
     return this.biome[0].toUpperCase() + this.biome.slice(1);
@@ -180,31 +184,35 @@ optionClass(kind, value) {
              :alt="$store.quiz.house.name"
              class="w-full max-h-64 object-contain mb-5 rounded-xl" />
 
-        <!-- Beds row -->
-        <div class="mb-5">
-          <p class="mb-2 text-lg font-semibold">Beds</p>
-          <div class="flex flex-wrap justify-center gap-3">
-            ${BED_OPTS.map(v => `
-              <button @click="$store.quiz.select('beds', ${v})"
-                      :class="$store.quiz.optionClass('beds', ${v})">
-                <img src="${ICONS.beds(v)}"
-                     alt="${v} beds"
-                     class="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto" />
-              </button>
-            `).join("")}
+          <!-- Beds row -->
+          <div class="mb-4">
+            <p class="mb-2 font-semibold">Beds</p>
+            <div class="grid gap-2 mx-auto"
+                 :style="$store.quiz.optionRowStyle(4)">
+              ${BED_OPTS.map(v => `
+                <button @click="$store.quiz.select('beds', ${v})"
+                        :class="$store.quiz.optionClass('beds', ${v})"
+                        class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
+                  <img src="${ICONS.beds(v)}"
+                       alt="${v} beds"
+                       class="max-w-full max-h-full object-contain" />
+                </button>
+              `).join("")}
+            </div>
           </div>
-        </div>
 
         <!-- Chest row -->
-        <div class="mb-5">
-          <p class="mb-2 text-lg font-semibold">Chest</p>
-          <div class="flex flex-wrap justify-center gap-3">
+        <div class="mb-4">
+          <p class="mb-2 font-semibold">Chest</p>
+          <div class="grid gap-2 mx-auto"
+               :style="$store.quiz.optionRowStyle($store.quiz.chestOptions.length)">
             <template x-for="t in $store.quiz.chestOptions" :key="t">
               <button @click="$store.quiz.select('chest', t)"
-                      :class="$store.quiz.optionClass('chest', t)">
+                      :class="$store.quiz.optionClass('chest', t)"
+                      class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
                 <img :src="'assets/icons/chest_' + t + '.png'"
                      :alt="t + ' chest'"
-                     class="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto" />
+                     class="max-w-full max-h-full object-contain" />
               </button>
             </template>
           </div>
@@ -212,15 +220,17 @@ optionClass(kind, value) {
 
         <!-- Craft row (desert only) -->
         <template x-if="$store.quiz.needCraft">
-          <div class="mb-5">
-            <p class="mb-2 text-lg font-semibold">Crafting Table</p>
-            <div class="flex flex-wrap justify-center gap-3">
+          <div class="mb-4">
+            <p class="mb-2 font-semibold">Crafting Table</p>
+            <div class="grid gap-2 mx-auto"
+                 :style="$store.quiz.optionRowStyle(2)">
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
-                        :class="$store.quiz.optionClass('craft', ${flag})">
+                        :class="$store.quiz.optionClass('craft', ${flag})"
+                        class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
                   <img src="${ICONS.craft(flag)}"
-                       alt="${flag ? "Yes" : "No"}"
-                       class="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto" />
+                       alt="${flag ? 'Yes' : 'No'}"
+                       class="max-w-full max-h-full object-contain" />
                 </button>
               `).join("")}
             </div>
