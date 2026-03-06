@@ -15,7 +15,7 @@
         "name": "cartographer 1",
         "image": "assets/houses/taiga/Taiga_Cartographer_House_1.webp",
         "beds": 0,
-        "chest": "emerald"
+        "chest": "cartographer"
     },
     {
         "name": "fisher cottage 1",
@@ -27,7 +27,7 @@
         "name": "fletcher house 1",
         "image": "assets/houses/taiga/Taiga_Fletcher_House_1.webp",
         "beds": 0,
-        "chest": "emerald"
+        "chest": "flint"
     },
     {
         "name": "library 1",
