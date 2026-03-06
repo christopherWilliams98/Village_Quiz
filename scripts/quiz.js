@@ -49,10 +49,6 @@ Alpine.store("quiz", {
   correct: 0,
   finished: false,
 
-  optionRowStyle(count) {
-  return `grid-template-columns: repeat(${count}, minmax(0, 1fr)); width: fit-content;`;
-},
-
   // computed
   get biomeName() {
     return this.biome[0].toUpperCase() + this.biome.slice(1);
@@ -84,6 +80,15 @@ Alpine.store("quiz", {
     return this.picks.beds !== null &&
            this.picks.chest !== null &&
            (!this.needCraft || this.picks.craft !== null);
+  },
+
+  gridColsClass(count) {
+    return {
+      2: "grid-cols-2",
+      3: "grid-cols-3",
+      4: "grid-cols-4",
+      5: "grid-cols-5",
+    }[count] || "grid-cols-4";
   },
 
   // methods
@@ -137,33 +142,19 @@ Alpine.store("quiz", {
     }, delay);
   },
 
-optionClass(kind, value) {
-  if (!this.house._showAnswer) {
-    return this.picks[kind] === value
-      ? "border-yellow-400 ring-2 ring-yellow-400"
-      : "border-gray-600 hover:border-gray-500";
-  }
-
-  const correct = this.house[kind] === value;
-  const wasPicked = this.picks[kind] === value;
-
-  if (correct) return "border-green-500 ring-2 ring-green-500 animate-pulse";
-  if (wasPicked) return "border-red-500 ring-2 ring-red-500 opacity-50 animate-pulse";
-  return "border-gray-700 opacity-40";
-},
+  optionClass(kind, value) {
+    if (!this.house._showAnswer) {
+      return this.picks[kind] === value
+        ? "border-yellow-400 ring-2 ring-yellow-400"
+        : "border-gray-600 hover:border-gray-500";
+    }
 
     const correct = this.house[kind] === value;
     const wasPicked = this.picks[kind] === value;
 
-    if (correct) {
-      return `${base} border-green-500 ring-2 ring-green-500 animate-pulse`;
-    }
-
-    if (wasPicked) {
-      return `${base} border-red-500 ring-2 ring-red-500 opacity-50 animate-pulse`;
-    }
-
-    return `${base} border-gray-700 opacity-40`;
+    if (correct) return "border-green-500 ring-2 ring-green-500 animate-pulse";
+    if (wasPicked) return "border-red-500 ring-2 ring-red-500 opacity-50 animate-pulse";
+    return "border-gray-700 opacity-40";
   },
 
   resetPicks() {
@@ -184,32 +175,32 @@ optionClass(kind, value) {
              :alt="$store.quiz.house.name"
              class="w-full max-h-64 object-contain mb-5 rounded-xl" />
 
-          <!-- Beds row -->
-          <div class="mb-4">
-            <p class="mb-2 font-semibold">Beds</p>
-            <div class="grid gap-2 mx-auto"
-                 :style="$store.quiz.optionRowStyle(4)">
-              ${BED_OPTS.map(v => `
-                <button @click="$store.quiz.select('beds', ${v})"
-                        :class="$store.quiz.optionClass('beds', ${v})"
-                        class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
-                  <img src="${ICONS.beds(v)}"
-                       alt="${v} beds"
-                       class="max-w-full max-h-full object-contain" />
-                </button>
-              `).join("")}
-            </div>
+        <!-- Beds row -->
+        <div class="mb-4">
+          <p class="mb-2 font-semibold">Beds</p>
+          <div class="grid gap-2"
+               :class="$store.quiz.gridColsClass(4)">
+            ${BED_OPTS.map(v => `
+              <button @click="$store.quiz.select('beds', ${v})"
+                      :class="$store.quiz.optionClass('beds', ${v})"
+                      class="w-full aspect-square rounded-lg border bg-gray-800/70 p-1.5 sm:p-2 flex items-center justify-center transition">
+                <img src="${ICONS.beds(v)}"
+                     alt="${v} beds"
+                     class="max-w-full max-h-full object-contain" />
+              </button>
+            `).join("")}
           </div>
+        </div>
 
         <!-- Chest row -->
         <div class="mb-4">
           <p class="mb-2 font-semibold">Chest</p>
-          <div class="grid gap-2 mx-auto"
-               :style="$store.quiz.optionRowStyle($store.quiz.chestOptions.length)">
+          <div class="grid gap-2"
+               :class="$store.quiz.gridColsClass($store.quiz.chestOptions.length)">
             <template x-for="t in $store.quiz.chestOptions" :key="t">
               <button @click="$store.quiz.select('chest', t)"
                       :class="$store.quiz.optionClass('chest', t)"
-                      class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
+                      class="w-full aspect-square rounded-lg border bg-gray-800/70 p-1.5 sm:p-2 flex items-center justify-center transition">
                 <img :src="'assets/icons/chest_' + t + '.png'"
                      :alt="t + ' chest'"
                      class="max-w-full max-h-full object-contain" />
@@ -222,14 +213,14 @@ optionClass(kind, value) {
         <template x-if="$store.quiz.needCraft">
           <div class="mb-4">
             <p class="mb-2 font-semibold">Crafting Table</p>
-            <div class="grid gap-2 mx-auto"
-                 :style="$store.quiz.optionRowStyle(2)">
+            <div class="grid gap-2"
+                 :class="$store.quiz.gridColsClass(2)">
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
                         :class="$store.quiz.optionClass('craft', ${flag})"
-                        class="w-[4.75rem] h-[4.75rem] sm:w-24 sm:h-24 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
+                        class="w-full aspect-square rounded-lg border bg-gray-800/70 p-1.5 sm:p-2 flex items-center justify-center transition">
                   <img src="${ICONS.craft(flag)}"
-                       alt="${flag ? 'Yes' : 'No'}"
+                       alt="${flag ? "Yes" : "No"}"
                        class="max-w-full max-h-full object-contain" />
                 </button>
               `).join("")}
