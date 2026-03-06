@@ -27,7 +27,7 @@
         "name": "cartographer 1",
         "image": "assets/houses/plains/Plains_Cartographer_1.webp",
         "beds": 0,
-        "chest": "emerald"
+        "chest": "cartographer"
     },
     {
         "name": "fisher cottage 1",
