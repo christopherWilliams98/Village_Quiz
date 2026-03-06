@@ -4,149 +4,174 @@
         "image": "assets/houses/savanna/Savanna_Armorer_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "butcher shop 1",
         "image": "assets/houses/savanna/Savanna_Butchers_Shop_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "butcher shop 2",
         "image": "assets/houses/savanna/Savanna_Butchers_Shop_2.webp",
         "beds": 0,
         "chest": "emerald"
+        "craft": false
     },
     {
         "name": "cartographer 1",
         "image": "assets/houses/savanna/Savanna_Cartographer_1.webp",
         "beds": 0,
         "chest": "cartographer"
+        "craft": false
     },
     {
         "name": "fisher cottage 1",
         "image": "assets/houses/savanna/Savanna_Fisher_Cottage_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "fletcher house 1",
         "image": "assets/houses/savanna/Savanna_Fletcher_House_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "library 1",
         "image": "assets/houses/savanna/Savanna_Library_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "mason house 1",
         "image": "assets/houses/savanna/Savanna_Mason_1.webp",
         "beds": 0,
         "chest": "emerald"
+        "craft": false
     },
     {
         "name": "medium house 1",
         "image": "assets/houses/savanna/Savanna_Medium_House_1.webp",
         "beds": 2,
         "chest": "bucket"
+        "craft": true
     },
     {
         "name": "medium house 2",
         "image": "assets/houses/savanna/Savanna_Medium_House_2.webp",
         "beds": 2,
         "chest": "bucket"
+        "craft": true
     },
     {
         "name": "shepherd house 1",
         "image": "assets/houses/savanna/Savanna_Shepherd_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "small house 1",
         "image": "assets/houses/savanna/Savanna_Small_House_1.webp",
         "beds": 1,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "small house 2",
         "image": "assets/houses/savanna/Savanna_Small_House_2.webp",
         "beds": 1,
         "chest": "bucket"
+        "craft": false
     },
     {
         "name": "small house 3",
         "image": "assets/houses/savanna/Savanna_Small_House_3.webp",
         "beds": 1,
         "chest": "none"
+        "craft": true
     },
     {
         "name": "small house 4",
         "image": "assets/houses/savanna/Savanna_Small_House_4.webp",
         "beds": 1,
         "chest": "bucket"
+        "craft": false
     },
     {
         "name": "small house 5",
         "image": "assets/houses/savanna/Savanna_Small_House_5.webp",
         "beds": 1,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "small house 6",
         "image": "assets/houses/savanna/Savanna_Small_House_6.webp",
         "beds": 1,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "small house 7",
         "image": "assets/houses/savanna/Savanna_Small_House_7.webp",
         "beds": 1,
         "chest": "bucket"
+        "craft": false
     },
     {
         "name": "small house 8",
         "image": "assets/houses/savanna/Savanna_Small_House_8.webp",
         "beds": 1,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "tannery 1",
         "image": "assets/houses/savanna/Savanna_Tannery_1.webp",
         "beds": 0,
         "chest": "emerald"
+        "craft": false
     },
     {
         "name": "temple 1",
         "image": "assets/houses/savanna/Savanna_Temple_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "temple 2",
         "image": "assets/houses/savanna/Savanna_Temple_2.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "toolsmith 1",
         "image": "assets/houses/savanna/Savanna_Toolsmith_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
     {
         "name": "blacksmith 1",
         "image": "assets/houses/savanna/Savanna_Blacksmith_1.webp",
         "beds": 0,
         "chest": "none"
+        "craft": false
     },
         {
         "name": "blacksmith 2",
         "image": "assets/houses/savanna/Savanna_Blacksmith_2.webp",
         "beds": 0,
         "chest": "iron"
+        "craft": false
     }
 ]
