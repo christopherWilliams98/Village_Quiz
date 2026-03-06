@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Learn your fucking houses</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
   </head>
-  <body class="bg-gray-900 text-gray-100 flex flex-col items-center min-h-screen p-6">
 
+  <body class="bg-gray-900 text-gray-100 min-h-screen">
     <!-- biome-specific background -->
     <div
       x-data
@@ -16,32 +15,36 @@
       class="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-10 -z-10 pointer-events-none">
     </div>
 
-    <h1 class="text-3xl font-bold mb-6 text-center">
-      Learn your fucking houses –
-      <span x-data x-text="$store.quiz.biomeName"></span>
-    </h1>
-      <p class="mb-4 text-center">
+    <main class="px-4 py-6 sm:px-6 flex flex-col items-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+        Learn your fucking houses –
+        <span x-data x-text="$store.quiz.biomeName"></span>
+      </h1>
+
+      <p class="mb-5 text-center text-lg">
         Inspiration from yatko's:
         <a href="https://minecraftvillages.casa/"
-          target="_blank" rel="noopener"
-          class="text-emerald-400 underline hover:text-emerald-300">
+           target="_blank"
+           rel="noopener"
+           class="text-emerald-400 underline hover:text-emerald-300 transition">
           minecraftvillages.casa
         </a>
       </p>
-    <!-- biome switcher buttons -->
-    <div
-      x-data
-      x-init="$store.quiz.initBiomeSwitcher($el)"
-      class="mb-4 w-full flex overflow-x-auto sm:overflow-visible whitespace-nowrap
-            justify-start sm:justify-center">
-    </div>
 
-    <!-- quiz card -->
-    <div
-      x-data
-      x-init="$store.quiz.mount($el)"
-      class="w-full max-w-xs sm:max-w-md">
-    </div>
+      <!-- biome switcher buttons -->
+      <div
+        x-data
+        x-init="$store.quiz.initBiomeSwitcher($el)"
+        class="mb-5 w-full max-w-3xl flex gap-2 overflow-x-auto sm:justify-center whitespace-nowrap pb-1">
+      </div>
+
+      <!-- quiz card -->
+      <div
+        x-data
+        x-init="$store.quiz.mount($el)"
+        class="w-full max-w-xs sm:max-w-lg">
+      </div>
+    </main>
 
     <script type="module" src="scripts/quiz.js"></script>
   </body>
