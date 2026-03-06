@@ -38,18 +38,15 @@ function shuffle(a) {
 import Alpine from "https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/module.esm.js";
 
 Alpine.store("quiz", {
-  // core state
   biome: "plains",
   houses: [],
   idx: 0,
   picks: { beds: null, chest: null, craft: null },
 
-  // tracking & results
   attempts: 0,
   correct: 0,
   finished: false,
 
-  // computed
   get biomeName() {
     return this.biome[0].toUpperCase() + this.biome.slice(1);
   },
@@ -71,9 +68,7 @@ Alpine.store("quiz", {
   },
 
   get grade() {
-    const p = this.percent;
-    if (p >= 90) return "Spoingus pace";
-    return "???";
+    return this.percent >= 90 ? "Spoingus pace" : "???";
   },
 
   get ready() {
@@ -91,7 +86,6 @@ Alpine.store("quiz", {
     }[count] || "grid-cols-4";
   },
 
-  // methods
   async loadBiome(b) {
     if (!BIOMES.includes(b)) return;
 
@@ -162,12 +156,10 @@ Alpine.store("quiz", {
     if (this.house) delete this.house._showAnswer;
   },
 
-  // mount helpers
   async mount(cardEl) {
     await this.loadBiome(this.biome);
 
     cardEl.innerHTML = `
-      <!-- Quiz card -->
       <div x-show="!$store.quiz.finished"
            class="rounded-3xl border border-gray-700/80 bg-gray-800/90 shadow-2xl p-5 sm:p-6"
            x-transition>
@@ -175,7 +167,6 @@ Alpine.store("quiz", {
              :alt="$store.quiz.house.name"
              class="w-full max-h-64 object-contain mb-5 rounded-xl" />
 
-        <!-- Beds row -->
         <div class="mb-4">
           <p class="mb-2 font-semibold">Beds</p>
           <div class="grid gap-2"
@@ -192,7 +183,6 @@ Alpine.store("quiz", {
           </div>
         </div>
 
-        <!-- Chest row -->
         <div class="mb-4">
           <p class="mb-2 font-semibold">Chest</p>
           <div class="grid gap-2"
@@ -209,7 +199,6 @@ Alpine.store("quiz", {
           </div>
         </div>
 
-        <!-- Craft row (desert only) -->
         <template x-if="$store.quiz.needCraft">
           <div class="mb-4">
             <p class="mb-2 font-semibold">Crafting Table</p>
@@ -244,7 +233,6 @@ Alpine.store("quiz", {
         </p>
       </div>
 
-      <!-- Results card -->
       <div x-show="$store.quiz.finished"
            class="rounded-3xl border border-gray-700/80 bg-gray-800/90 shadow-2xl p-6 sm:p-7 text-center"
            x-transition>
