@@ -133,16 +133,20 @@ Alpine.store("quiz", {
     }, delay);
   },
 
-  optionClass(kind, value) {
-    const base =
-      "w-24 sm:w-28 rounded-xl border p-2 sm:p-3 transition duration-150 " +
-      "flex items-center justify-center bg-gray-800/70";
+optionClass(kind, value) {
+  if (!this.house._showAnswer) {
+    return this.picks[kind] === value
+      ? "border-yellow-400 ring-2 ring-yellow-400"
+      : "border-gray-600 hover:border-gray-500";
+  }
 
-    if (!this.house._showAnswer) {
-      return this.picks[kind] === value
-        ? `${base} border-yellow-400 ring-2 ring-yellow-400 bg-gray-700/80`
-        : `${base} border-gray-600 hover:border-gray-400 hover:bg-gray-700/70`;
-    }
+  const correct = this.house[kind] === value;
+  const wasPicked = this.picks[kind] === value;
+
+  if (correct) return "border-green-500 ring-2 ring-green-500 animate-pulse";
+  if (wasPicked) return "border-red-500 ring-2 ring-red-500 opacity-50 animate-pulse";
+  return "border-gray-700 opacity-40";
+},
 
     const correct = this.house[kind] === value;
     const wasPicked = this.picks[kind] === value;
