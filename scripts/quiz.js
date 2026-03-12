@@ -206,7 +206,7 @@ Alpine.store("quiz", {
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
                         :class="$store.quiz.optionClass('craft', ${flag})"
-                        class="w-full h-28 sm:h-32 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
+                        class="w-full h-24 sm:h-28 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
                   <img src="${ICONS.craft(flag)}"
                        alt="${flag ? "Yes" : "No"}"
                        class="max-w-full max-h-full object-contain scale-90" />
