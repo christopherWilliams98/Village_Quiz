@@ -202,15 +202,14 @@ Alpine.store("quiz", {
         <template x-if="$store.quiz.needCraft">
           <div class="mb-4">
             <p class="mb-2 font-semibold">Crafting Table</p>
-            <div class="grid gap-2"
-                 :class="$store.quiz.gridColsClass(2)">
+            <div class="grid grid-cols-2 gap-2">
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
                         :class="$store.quiz.optionClass('craft', ${flag})"
-                        class="w-full aspect-square rounded-lg border bg-gray-800/70 p-1.5 sm:p-2 flex items-center justify-center transition">
+                        class="w-full h-28 sm:h-32 rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
                   <img src="${ICONS.craft(flag)}"
                        alt="${flag ? "Yes" : "No"}"
-                       class="max-w-full max-h-full object-contain" />
+                       class="max-w-full max-h-full object-contain scale-90" />
                 </button>
               `).join("")}
             </div>
