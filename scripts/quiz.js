@@ -165,11 +165,11 @@ Alpine.store("quiz", {
            x-transition>
         <img :src="$store.quiz.house.image"
              :alt="$store.quiz.house.name"
-             class="w-full max-h-64 object-contain mb-5 rounded-xl" />
+             class="w-full max-h-64 object-contain mb-4 rounded-xl" />
 
-        <div class="mb-4">
-          <p class="mb-2 font-semibold">Beds</p>
-          <div class="grid gap-2"
+        <div class="mb-3">
+          <p class="mb-1 font-semibold leading-tight">Beds</p>
+          <div class="grid gap-1.5"
                :class="$store.quiz.gridColsClass(4)">
             ${BED_OPTS.map(v => `
               <button @click="$store.quiz.select('beds', ${v})"
@@ -183,9 +183,9 @@ Alpine.store("quiz", {
           </div>
         </div>
 
-        <div class="mb-4">
-          <p class="mb-2 font-semibold">Chest</p>
-          <div class="grid gap-2"
+        <div class="mb-3">
+          <p class="mb-1 font-semibold leading-tight">Chest</p>
+          <div class="grid gap-1.5"
                :class="$store.quiz.gridColsClass($store.quiz.chestOptions.length)">
             <template x-for="t in $store.quiz.chestOptions" :key="t">
               <button @click="$store.quiz.select('chest', t)"
@@ -200,16 +200,16 @@ Alpine.store("quiz", {
         </div>
 
         <template x-if="$store.quiz.needCraft">
-          <div class="mb-4">
-            <p class="mb-2 font-semibold">Crafting Table</p>
-            <div class="grid grid-cols-2 gap-2">
+          <div class="mb-3">
+            <p class="mb-1 font-semibold leading-tight">Crafting Table</p>
+            <div class="grid grid-cols-2 gap-1.5">
               ${CRAFT_OPTS.map(flag => `
                 <button @click="$store.quiz.select('craft', ${flag})"
                         :class="$store.quiz.optionClass('craft', ${flag})"
                         class="w-full h-[4.5rem] sm:h-[5rem] rounded-lg border bg-gray-800/70 p-2 flex items-center justify-center transition">
                   <img src="${ICONS.craft(flag)}"
                        alt="${flag ? "Yes" : "No"}"
-                       class="max-w-full max-h-full object-contain scale-90" />
+                       class="max-w-full max-h-full object-contain scale-75" />
                 </button>
               `).join("")}
             </div>
@@ -218,14 +218,14 @@ Alpine.store("quiz", {
 
         <button @click="$store.quiz.submit()"
                 :disabled="!$store.quiz.ready"
-                class="mt-1 w-full rounded-xl py-3 font-semibold text-lg
+                class="mt-0.5 w-full rounded-xl py-3 font-semibold text-lg
                        bg-emerald-600 hover:bg-emerald-500
                        disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-not-allowed
                        transition">
           Submit
         </button>
 
-        <p class="mt-4 text-center text-sm text-gray-300">
+        <p class="mt-3 text-center text-sm text-gray-300">
           Score:
           <span x-text="$store.quiz.correct"></span> /
           <span x-text="$store.quiz.attempts"></span>
